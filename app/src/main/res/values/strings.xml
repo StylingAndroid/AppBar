@@ -1,0 +1,15 @@
+<resources>
+  <string name="app_name">AppBar</string>
+  <string name="section_format">Hello World from section: %1$d</string>
+
+  <string name="navigation_drawer_open">Open navigation drawer</string>
+  <string name="navigation_drawer_close">Close navigation drawer</string>
+  <string name="nav_import">Import</string>
+  <string name="nav_gallery">Gallery</string>
+  <string name="nav_slideshow">Slideshow</string>
+  <string name="nav_tools">Tools</string>
+  <string name="nav_communicate">Communicate</string>
+  <string name="nav_share">Share</string>
+  <string name="nav_send">Send</string>
+  <string name="styling_android">Styling Android</string>
+</resources>
