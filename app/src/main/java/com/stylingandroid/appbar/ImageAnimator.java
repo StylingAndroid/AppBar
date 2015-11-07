@@ -5,6 +5,8 @@ import android.view.View;
 import android.widget.ImageView;
 
 class ImageAnimator {
+    private static final float FACTOR = 0.1f;
+
     private final SectionsPagerAdapter pagerAdapter;
     private final ImageView outgoing;
     private final ImageView imageView;
@@ -27,6 +29,7 @@ class ImageAnimator {
         @DrawableRes int incomingId = pagerAdapter.getImageId(finalPosition);
         positionFactor = 1f / (end - start);
         outgoing.setImageDrawable(imageView.getDrawable());
+        outgoing.setTranslationX(0f);
         outgoing.setVisibility(View.VISIBLE);
         outgoing.setAlpha(1f);
         imageView.setImageResource(incomingId);
@@ -46,11 +49,17 @@ class ImageAnimator {
 
     public void forward(int position, float positionOffset) {
         float offset = getOffset(position, positionOffset);
+        int width = imageView.getWidth();
+        outgoing.setTranslationX(-offset * (FACTOR * width));
+        imageView.setTranslationX((1 - offset) * (FACTOR * width));
         imageView.setAlpha(offset);
     }
 
     public void backwards(int position, float positionOffset) {
         float offset = getOffset(position, positionOffset);
+        int width = imageView.getWidth();
+        outgoing.setTranslationX((1 - offset) * (FACTOR * width));
+        imageView.setTranslationX(-(offset) * (FACTOR * width));
         imageView.setAlpha(1 - offset);
     }
 
