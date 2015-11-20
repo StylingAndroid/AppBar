@@ -24,8 +24,8 @@ android {
 
 dependencies {
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:design:23.1.0'
-    compile 'com.android.support:percent:23.1.0'
+    compile 'com.android.support:design:23.1.1'
+    compile 'com.android.support:percent:23.1.1'
 }
 
 apply from: '../config/static_analysis.gradle'
